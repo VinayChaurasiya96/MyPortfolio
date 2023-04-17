@@ -1,8 +1,11 @@
 import React, {useState} from "react";
 import PageHeader from "../../components/pageHeader";
 import {BsInfoCircleFill} from "react-icons/bs";
-import image2 from "../../images/flashcardBanner.png";
-import image3 from "../../images/Screenshot (718).png";
+import flashcardImg from "../../images/flashcardBanner.png";
+import ticketBookingImg from "../../images/bookMyShow.png";
+import addToCartImg from "../../images/addToCart.png";
+import freebieseImg from "../../images/freebiese.png";
+import todoAppImg from "../../images/todoApp.png";
 import "./style.scss";
 const Portfolio = () => {
   const [filteredValue, setFilteredValue] = useState(1);
@@ -10,27 +13,33 @@ const Portfolio = () => {
   const portfolioData = [
     {
       id: 2,
-      name: "Development",
-      image: image2,
-      link: "",
+      name: "Flashcard Generator",
+      image: flashcardImg,
+      link: " https://flashcard-generator-1d2e8.web.app/",
     },
     {
       id: 3,
-      name: "Design ",
-      image: image2,
-      link: "",
+      name: "Freebiese Landing Page ",
+      image: freebieseImg,
+      link: "https://freebiese-landing-page.web.app/  ",
     },
     {
       id: 2,
-      name: "Development",
-      image: image2,
-      link: "",
+      name: "Add to Cart",
+      image: addToCartImg,
+      link: "https://food-restaurant-d59ff.web.app/menu",
     },
     {
       id: 2,
-      name: "Development",
-      image: image2,
-      link: "",
+      name: "Todo App",
+      image: todoAppImg,
+      link: " https://cheerful-pika-c2074d.netlify.app/",
+    },
+    {
+      id: 2,
+      name: "Ticket Booking ",
+      image: ticketBookingImg,
+      link: " https://book-my-show-client.web.app/",
     },
   ];
   const filterData = [
@@ -102,7 +111,9 @@ const Portfolio = () => {
                 {index === hoverValue && (
                   <div className="">
                     <p>{item.name}</p>
-                    <button>Visit</button>
+                    <a href={item.link} target="blank">
+                      <button>Visit</button>
+                    </a>
                   </div>
                 )}
               </div>
