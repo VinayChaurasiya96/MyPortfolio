@@ -1,0 +1,119 @@
+.navbar {
+  background-color: var(--yellow-theme-nav-background-color);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  font-size: 1.2rem;
+  position: sticky;
+  z-index: 999;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    padding: 0px 20px;
+    flex: 1;
+
+    &__logo {
+      color: var(--yellow-theme-main-color);
+      cursor: pointer;
+    }
+  }
+}
+
+.navbar__container__menu {
+  display: flex;
+  list-style: none;
+  text-align: center;
+
+  &__item {
+    line-height: 40px;
+    margin-right: 1.5rem;
+    font-size: 1.6rem;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 0;
+      background: transparent;
+      transition: all 0.5s ease;
+    }
+
+    &:hover::after {
+      // width: 100%;
+      // background: var(--yellow-theme-main-color);
+    }
+    &__links {
+      color: var(--yellow-theme-main-color);
+      text-decoration: none;
+      padding: 0.5rem;
+    }
+  }
+}
+
+.nav-icon {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+  }
+  .App {
+    padding-top: 80px;
+  }
+  .nav-wrapper {
+    width: 100%;
+    position: absolute !important;
+    top: 80px;
+    left: -110%;
+    height: 100vh;
+    opacity: 1;
+    transition: all 0.5s ease;
+    .navbar__container__menu {
+      display: block;
+    }
+
+    &.active {
+      background: #181818;
+      left: 0px;
+      opacity: 1;
+    }
+  }
+  .nav-icon {
+    display: block;
+    cursor: pointer;
+    color: var(--yellow-theme-main-color);
+    padding-right: 20px;
+  }
+  .navbar__container__menu__item {
+    border-bottom: 1px solid #282828;
+    margin: 0px;
+    padding: 20px 0px;
+  }
+}
+
+.nav-wrapper {
+  position: relative;
+  --marker-width: 30px;
+  --marker-left: 0;
+}
+.marker {
+  position: absolute;
+  height: 4px;
+  border-radius: 15px;
+  left: var(--marker-left);
+  bottom: 0;
+  width: var(--marker-width);
+  background-color: var(--yellow-theme-main-color);
+  transition: 0.5s;
+}
+.marker-hover {
+  opacity: 0.4;
+}
